@@ -1,81 +1,73 @@
+# Dabetai AI Models — <span id="en3">EN</span> · <a href="#es_aim">ES</a>
 
-# dabetai AI Models - Módulo de inteligencia artificial para predicción de complicaciones diabéticas
-
-Módulo de machine learning que implementa los modelos predictivos para las complicaciones diabéticas tipo 1, integrados en la plataforma dabetai.
+Machine learning module with predictive models for type 1 diabetic complications, integrated into the Dabetai platform.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11-blue?logo=python" alt="Python version">
-  <img src="https://img.shields.io/badge/scikit-learn-1.3-blue?logo=scikitlearn" alt="scikit-learn version">
-  <img src="https://img.shields.io/badge/LightGBM-3.x-green?logo=lightgbm" alt="LightGBM version">
-  <img src="https://img.shields.io/badge/XGBoost-1.6-orange?logo=xgboost" alt="XGBoost version">
-  <img src="https://img.shields.io/badge/joblib-1.x-yellow" alt="joblib version">
+  <img src="https://img.shields.io/badge/Python-3.11-blue?logo=python" alt="Python">
+  <img src="https://img.shields.io/badge/scikit--learn-1.3-blue?logo=scikitlearn" alt="scikit-learn">
+  <img src="https://img.shields.io/badge/LightGBM-3.x-green?logo=lightgbm" alt="LightGBM">
+  <img src="https://img.shields.io/badge/XGBoost-1.6-orange?logo=xgboost" alt="XGBoost">
+  <img src="https://img.shields.io/badge/joblib-1.x-yellow" alt="joblib">
 </p>
 
 ---
 
-## 🤖 ¿Qué es dabetai AI Models?
+## What is Dabetai AI Models?
 
-**dabetai AI Models** contiene los pipelines completos para entrenamiento, evaluación y serialización de modelos de machine learning enfocados en predecir:
+**Dabetai AI Models** contains the complete pipelines for training, evaluating, and serializing machine learning models focused on predicting:
 
-- Retinopatía diabética  
-- Nefropatía diabética  
-- Neuropatía diabética  
-- Pie diabético  
+- Diabetic retinopathy
+- Diabetic nephropathy
+- Diabetic neuropathy
+- Diabetic foot
 
-Los modelos se basan en datos clínicos y biométricos del estudio IOBP2 y están optimizados con técnicas avanzadas como balanceo de clases, optimización de hiperparámetros y validación cruzada.
-
----
-
-## ✨ Funcionalidades principales
-
-- Preparación modular y automatizada de datasets específicos por complicación  
-- Experimentación comparativa con múltiples algoritmos (Regresión Logística, Random Forest, LightGBM, XGBoost, SVM, AdaBoost)  
-- Optimización de hiperparámetros mediante Grid Search  
-- Entrenamiento final y serialización de modelos  
-- Generación automática de reportes y visualizaciones (ROC, matrices de confusión, importancia de características)  
+The models are based on clinical and biometric data from the IOBP2 study and are optimized with advanced techniques such as class balancing, hyperparameter tuning, and cross-validation.
 
 ---
 
-## 🛠 Tecnologías
+## Features
 
-- **Python 3.11+**  
-- **scikit-learn**  
-- **LightGBM**  
-- **XGBoost**  
-- **joblib** para serialización  
-- **imbalanced-learn** para balanceo de clases (SMOTE)  
-- **matplotlib** y **seaborn** para visualización  
+- Modular and automated dataset preparation per complication
+- Comparative experimentation with multiple algorithms (Logistic Regression, Random Forest, LightGBM, XGBoost, SVM, AdaBoost)
+- Hyperparameter optimization via Grid Search
+- Final model training and serialization
+- Automatic report and visualization generation (ROC curves, confusion matrices, feature importance)
 
 ---
 
-## ⚡ Instalación rápida
+## Tech Stack
 
-### Prerrequisitos
+- **Python 3.11+**
+- **scikit-learn**
+- **LightGBM**
+- **XGBoost**
+- **joblib** for serialization
+- **imbalanced-learn** for class balancing (SMOTE)
+- **matplotlib** and **seaborn** for visualization
 
-- Python 3.11+  
-- pip  
+---
 
-### Pasos
+## Quick Start
 
-1. **Clonar repositorio**
+### Prerequisites
+
+- Python 3.11+
+- pip
+
+### Steps
 
 ```bash
-git clone https://github.com/chrisdev-ts/dabetai-aimodels.git
-cd dabetai-aimodels
-````
-
-2. **Instalar dependencias**
-
-```bash
+git clone https://github.com/dabetai-org/ai-models.git
+cd ai-models
 pip install -r requirements.txt
 ```
 
 ---
 
-## 📂 Estructura del proyecto
+## Project Structure
 
 ```
-dabetai-aimodels/
+ai-models/
 ├── scripts/
 │   ├── 01_prepare_datasets.py
 │   ├── 02_run_experiments.py
@@ -91,21 +83,21 @@ dabetai-aimodels/
 
 ---
 
-## 📚 Guía de uso
+## Usage Guide
 
-### 1. Preparar datasets
+### 1. Prepare datasets
 
 ```bash
 python scripts/01_prepare_datasets.py
 ```
 
-### 2. Ejecutar experimentos
+### 2. Run experiments
 
 ```bash
 python scripts/02_run_experiments.py
 ```
 
-### 3. Finalizar modelos
+### 3. Finalize models
 
 ```bash
 python scripts/03_finalize_model.py
@@ -113,46 +105,44 @@ python scripts/03_finalize_model.py
 
 ---
 
-## 🩺 Datos requeridos
+## Required Data
 
-Los datos se basan en el estudio **IOBP2 (In Control)**. Deben colocarse en `data/raw/datatables/` con los archivos específicos. Consulta el archivo `CITATION.md` para más detalles sobre atribución y uso responsable.
-
----
-
-## 🏗 Ecosistema dabetai: nuestros repositorios
-
-dabetai está compuesto por múltiples repositorios especializados:
-
-| Repositorio                                                             | Propósito                   | Estado          |
-| ----------------------------------------------------------------------- | --------------------------- | --------------- |
-| **[dabetai-mobileapp](https://github.com/Fermin-Cardenas/dabetai-mobileapp)** | App para pacientes          | ✅ En desarrollo |
-| **[dabetai-webapp](https://github.com/chrisdev-ts/dabetai-webapp)**     | App web para médicos        | ✅ En desarrollo |
-| **[dabetai-aiapi](https://github.com/aleor25/dabetai-aiapi)**           | API de IA y predicciones    | ✅ En desarrollo |
-| **[dabetai-aimodels](https://github.com/chrisdev-ts/dabetai-aimodels)** | Modelos de machine learning | ✅ En desarrollo |
-| **[dabetai-landing](https://github.com/chrisdev-ts/dabetai-landing)**   | Página de aterrizaje        | ✅ En desarrollo |
-| **[dabetai-api](https://github.com/chrisdev-ts/dabetai-api)**                                                         | API principal del backend   | ✅ En desarrollo |
+Data is based on the **IOBP2 (In Control)** study. Place files in `data/raw/datatables/`. See [CITATION.md](CITATION.md) for attribution and responsible use.
 
 ---
 
-## 🤝 Colaboración interna
+## Ecosystem
 
-Seguimos convenciones específicas para mantener consistencia - consulta [CONTRIBUTING.MD](CONTRIBUTING.MD).
+| Repository | Purpose | Status |
+|---|---|---|
+| [mobile-app](https://github.com/dabetai-org/mobile-app) | Patient mobile app | Active |
+| [web-app](https://github.com/dabetai-org/web-app) | Doctor web app | Active |
+| [api](https://github.com/dabetai-org/api) | Main backend API | Active |
+| [ai-api](https://github.com/dabetai-org/ai-api) | AI prediction API | Active |
+| [ai-models](https://github.com/dabetai-org/ai-models) | ML models | Active |
+| [landing](https://github.com/dabetai-org/landing) | Landing page | Active |
 
 ---
 
-## 🤝 Reconocimientos
+## Contributing
 
-Este proyecto fue desarrollado por el equipo de autores:
+See [CONTRIBUTING.MD](CONTRIBUTING.MD).
 
-* Cardenas Cabal Fermín
-* Ortiz Pérez Alejandro
-* Serrano Puertos Jorge Christian
+---
 
-Con la asesoría y guía conceptual de:
+## Acknowledgments
 
-* Guarneros Nolasco Luis Rolando
-* Cruz Ramos Nancy Aracely
+Developed by:
 
-Y con el apoyo académico de la
+- Cardenas Cabal Fermín
+- Ortiz Pérez Alejandro
+- Serrano Puertos Jorge Christian
 
-* Universidad Tecnológica del Centro de Veracruz
+Advisors:
+
+- Guarneros Nolasco Luis Rolando
+- Cruz Ramos Nancy Aracely
+
+Academic support:
+
+- Universidad Tecnológica del Centro de Veracruz
