@@ -1,22 +1,35 @@
-<a href="#en3"><span id="es_aim">ES</span></a> · <a href="#en3">EN</a>
-
-# Dabetai AI Models
-
-Módulo de machine learning con modelos predictivos para complicaciones diabéticas tipo 1, integrados en la plataforma Dabetai.
+# dabetai — Modelos IA
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11-blue?logo=python" alt="Python">
-  <img src="https://img.shields.io/badge/scikit--learn-1.3-blue?logo=scikitlearn" alt="scikit-learn">
-  <img src="https://img.shields.io/badge/LightGBM-3.x-green?logo=lightgbm" alt="LightGBM">
-  <img src="https://img.shields.io/badge/XGBoost-1.6-orange?logo=xgboost" alt="XGBoost">
-  <img src="https://img.shields.io/badge/joblib-1.x-yellow" alt="joblib">
+  <img src="https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/scikit--learn-1.3-F7931E?logo=scikitlearn&logoColor=white" alt="scikit-learn">
+  <img src="https://img.shields.io/badge/XGBoost-1.6-orange" alt="XGBoost">
+  <img src="https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white" alt="PyTorch">
+</p>
+
+<p align="center">
+  <em>Pipelines de machine learning para entrenamiento, evaluación y serialización de modelos predictivos de complicaciones diabéticas.</em>
+</p>
+
+<p align="center">
+  <a href="https://github.com/dabetai-org/ai-models">Repositorio</a>
+  ·
+  <a href="https://github.com/dabetai-org/ai-models/issues">Reportar Bug</a>
+  ·
+  <a href="https://chrisssp.vercel.app/assets/docs/papers/Prevenci%C3%B3n-de-Riesgos-de-la-Diabetes-Mediante-una-Plataforma-Inteligente-de-Monitorizaci%C3%B3n-y-Predicci%C3%B3n-de-Complicaciones-con-Inteligencia-Artificial.pdf">Artículo de Investigación</a>
+</p>
+
+<p align="center">
+  <a href="README.md">🇬🇧 English</a> · <a href="README.es.md">🇪🇸 Español</a>
 </p>
 
 ---
 
-## ¿Qué es Dabetai AI Models?
+## Acerca de dabetai
 
-**Dabetai AI Models** contiene los pipelines completos para entrenamiento, evaluación y serialización de modelos de machine learning enfocados en predecir:
+**dabetai** es un ecosistema preventivo integral para la diabetes que predice complicaciones como retinopatía, nefropatía, neuropatía y pie diabético antes de que sean irreversibles.
+
+Este repositorio contiene los **Modelos IA** — pipelines completos para entrenamiento, evaluación y serialización de modelos de machine learning enfocados en predecir:
 
 - Retinopatía diabética
 - Nefropatía diabética
@@ -25,29 +38,24 @@ Módulo de machine learning con modelos predictivos para complicaciones diabéti
 
 Los modelos se basan en datos clínicos y biométricos del estudio IOBP2 y están optimizados con técnicas avanzadas como balanceo de clases, optimización de hiperparámetros y validación cruzada.
 
----
+### Ecosistema
+
+| Componente | Repositorio | Stack |
+|-----------|-----------|-------|
+| **App Móvil** | [dabetai-org/mobile-app](https://github.com/dabetai-org/mobile-app) | React Native 0.79, Expo 53, Tailwind CSS |
+| **Portal Web** | [dabetai-org/web-app](https://github.com/dabetai-org/web-app) | Angular 19, Tailwind CSS |
+| **Core API** | [dabetai-org/api](https://github.com/dabetai-org/api) | NestJS 11, PostgreSQL, Prisma |
+| **API de IA** | [dabetai-org/ai-api](https://github.com/dabetai-org/ai-api) | FastAPI, Python 3.11, MongoDB |
+| **Modelos IA** (este) | [dabetai-org/ai-models](https://github.com/dabetai-org/ai-models) | Python, scikit-learn, XGBoost, PyTorch |
+| **Landing** | [dabetai-org/landing](https://github.com/dabetai-org/landing) | Astro, Tailwind CSS |
 
 ## Funcionalidades
 
-- Preparación modular y automatizada de datasets por complicación
-- Experimentación comparativa con múltiples algoritmos (Regresión Logística, Random Forest, LightGBM, XGBoost, SVM, AdaBoost)
-- Optimización de hiperparámetros mediante Grid Search
-- Entrenamiento final y serialización de modelos
-- Generación automática de reportes y visualizaciones (ROC, matrices de confusión, importancia de características)
-
----
-
-## Tecnologías
-
-- **Python 3.11+**
-- **scikit-learn**
-- **LightGBM**
-- **XGBoost**
-- **joblib** para serialización
-- **imbalanced-learn** para balanceo de clases (SMOTE)
-- **matplotlib** y **seaborn** para visualización
-
----
+- **Preparación Modular de Datasets** — Pipelines automatizados por complicación
+- **Experimentación Multi-Algoritmo** — Regresión Logística, Random Forest, LightGBM, XGBoost, SVM, AdaBoost
+- **Optimización de Hiperparámetros** — Grid Search para configuración óptima
+- **Serialización de Modelos** — Exportación de modelos entrenados para producción
+- **Reportes Automáticos** — Curvas ROC, matrices de confusión, importancia de características
 
 ## Inicio rápido
 
@@ -56,15 +64,13 @@ Los modelos se basan en datos clínicos y biométricos del estudio IOBP2 y está
 - Python 3.11+
 - pip
 
-### Pasos
+### Instalación
 
 ```bash
 git clone https://github.com/dabetai-org/ai-models.git
 cd ai-models
 pip install -r requirements.txt
 ```
-
----
 
 ## Estructura del proyecto
 
@@ -83,9 +89,7 @@ ai-models/
 └── requirements.txt
 ```
 
----
-
-## Guía de uso
+## Uso
 
 ### 1. Preparar datasets
 
@@ -105,46 +109,28 @@ python scripts/02_run_experiments.py
 python scripts/03_finalize_model.py
 ```
 
----
-
-## Datos requeridos
+### Datos requeridos
 
 Los datos provienen del estudio **IOBP2 (In Control)**. Colocar los archivos en `data/raw/datatables/`. Ver [CITATION.md](CITATION.md) para atribución y uso responsable.
 
----
-
-## Ecosistema
-
-| Repositorio | Propósito | Estado |
-|---|---|---|
-| [mobile-app](https://github.com/dabetai-org/mobile-app) | App para pacientes | Activo |
-| [web-app](https://github.com/dabetai-org/web-app) | App web para médicos | Activo |
-| [api](https://github.com/dabetai-org/api) | API principal del backend | Activo |
-| [ai-api](https://github.com/dabetai-org/ai-api) | API de IA y predicciones | Activo |
-| [ai-models](https://github.com/dabetai-org/ai-models) | Modelos de machine learning | Activo |
-| [landing](https://github.com/dabetai-org/landing) | Página de aterrizaje | Activo |
-
----
-
 ## Contribuciones
 
-Ver [CONTRIBUTING.MD](CONTRIBUTING.MD).
+Por favor lee [CONTRIBUTING.md](CONTRIBUTING.md) para nuestras convenciones de ramas, commits y flujo de PRs.
 
----
+## Licencia
+
+Este proyecto está licenciado bajo GNU General Public License v3.0 — consulta el archivo [LICENSE](LICENSE) para más detalles.
 
 ## Reconocimientos
 
-Desarrollado por:
-
+**Autores:**
 - Cardenas Cabal Fermín
-- Ortiz Pérez Alejandro
-- Serrano Puertos Jorge Christian
+- Ortiz Pérez Alejandro — alex03ortizperez@gmail.com
+- Serrano Puertos Jorge Christian — christian.serrano.puertos@gmail.com
 
-Asesores:
-
+**Asesores:**
 - Guarneros Nolasco Luis Rolando
 - Cruz Ramos Nancy Aracely
 
-Apoyo académico:
-
+**Apoyo Académico:**
 - Universidad Tecnológica del Centro de Veracruz
